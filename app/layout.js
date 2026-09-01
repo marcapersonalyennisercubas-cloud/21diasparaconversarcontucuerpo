@@ -1,11 +1,11 @@
 import './globals.css';
 
 export const metadata = {
-  title: '21 días para conversar con tu cuerpo',
+  title: '21 días para aprender a conversar con tu cuerpo',
   description:
     'Aprende a conversar con tu cuerpo para crear una vida más grandiosa. 21 días, 10 minutos al día.',
   openGraph: {
-    title: '21 días para conversar con tu cuerpo',
+    title: '21 días para aprender a conversar con tu cuerpo',
     description:
       'Aprende a conversar con tu cuerpo para crear una vida más grandiosa. 21 días, 10 minutos al día.',
     type: 'website',

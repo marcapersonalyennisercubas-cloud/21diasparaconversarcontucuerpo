@@ -340,7 +340,7 @@ export default function Page() {
               textWrap: 'balance',
             }}
           >
-            21 días para{' '}
+            21 días para aprender a{' '}
             <em style={{ fontStyle: 'italic', fontWeight: 300, color: GOLD }}>conversar</em> con tu
             cuerpo
           </h1>
@@ -478,12 +478,12 @@ export default function Page() {
             layerStripe="repeating-linear-gradient(112deg, rgba(196,160,90,.16) 0 1px, transparent 1px 10px)"
             style={{ width: '62%', alignSelf: 'flex-end' }}
             src={IMAGES.detail}
-            alt="Detalle manos y piel"
+            alt="Primer plano de un ojo y su iris"
             label={
               <>
                 detalle
                 <br />
-                manos / piel
+                ojo / iris
               </>
             }
           />
@@ -719,7 +719,7 @@ export default function Page() {
               layerStripe="repeating-linear-gradient(112deg, rgba(196,160,90,.12) 0 1px, transparent 1px 12px)"
               scan="linear-gradient(90deg, transparent, rgba(196,160,90,.8), transparent)"
               src={IMAGES.editorial}
-              alt="Imagen editorial"
+              alt="Torso masculino"
               label={
                 <>
                   imagen editorial
@@ -1284,7 +1284,7 @@ export default function Page() {
             </h2>
             <div style={{ display: 'flex', gap: 'clamp(24px, 4vw, 58px)', flexWrap: 'wrap' }}>
               {[
-                { value: '15', count: '15', label: 'años de aprendizaje' },
+                { value: '23', count: '23', label: 'años de aprendizaje' },
                 { value: '6 cifras', count: null, label: 'invertidas en mi proceso' },
               ].map((stat) => (
                 <div
@@ -1314,7 +1314,7 @@ export default function Page() {
             >
               <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
                 Esta experiencia no nace de un curso que hice ayer y decidí empaquetar. Es el
-                resultado de 15 años de aprendizaje, experimentación, formación y experiencia.
+                resultado de 23 años de aprendizaje, experimentación, formación y experiencia.
               </p>
               <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
                 He probado, estudiado, experimentado y descartado muchísimo para llegar a comprender
@@ -1371,6 +1371,21 @@ export default function Page() {
           >
             ¿Qué pasa si no lo haces?
           </h2>
+          <p
+            data-reveal
+            style={{
+              margin: 0,
+              fontFamily: SERIF,
+              fontWeight: 300,
+              fontSize: 'clamp(24px, 2.6vw, 40px)',
+              lineHeight: 1.24,
+              maxWidth: '26ch',
+              textWrap: 'pretty',
+            }}
+          >
+            Puedes tomar acciones <em style={{ fontStyle: 'italic', color: GOLD_DEEP }}>hoy</em> o
+            pasar la siguiente década:
+          </p>
           <p
             data-reveal
             style={{
@@ -1758,7 +1773,7 @@ export default function Page() {
           pct
           pctColor={GOLD_DEEP}
           src={IMAGES.closing}
-          alt="Imagen de cierre"
+          alt="Manos sobre tela de seda"
           label={
             <>
               imagen de cierre
@@ -1786,7 +1801,7 @@ export default function Page() {
         }}
       >
         <span style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 19, opacity: 0.75 }}>
-          21 días para conversar con tu cuerpo
+          21 días para aprender a conversar con tu cuerpo
         </span>
         <div
           style={{

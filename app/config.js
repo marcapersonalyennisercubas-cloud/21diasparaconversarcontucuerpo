@@ -5,10 +5,10 @@ export const STRIPE_URL =
 // Fotos de la landing. Pon aquí la ruta de cada imagen dentro de /public/images.
 // Si un valor es null, ese hueco se muestra con el marcador de diseño.
 export const IMAGES = {
-  hero: '/images/retrato-principal.webp', // retrato principal · vertical 3:4
-  detail: '/images/detalle-manos.webp', // detalle manos / piel · cuadrada
-  editorial: '/images/editorial.webp', // imagen editorial · 16:10
-  practice: '/images/practica.webp', // imagen práctica · 4:5
-  origin: '/images/origen.webp', // retrato trayectoria · 4:5
-  closing: '/images/cierre.webp', // imagen de cierre · 4:5
+  hero: '/images/retrato-principal.webp', // portada · mujer, hombro y rostro · 3:4
+  detail: '/images/ojo.webp', // detalle · ojo e iris · 1:1
+  editorial: '/images/hombre.webp', // editorial · torso masculino · 16:10
+  practice: '/images/practica.webp', // el método · sentada junto a la ventana · 4:5
+  origin: '/images/origen.webp', // el origen · espalda · 4:5
+  closing: '/images/cierre.webp', // cierre · manos y tela · 4:5
 };

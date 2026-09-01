@@ -36,12 +36,12 @@ NEXT_PUBLIC_STRIPE_URL=https://buy.stripe.com/tu-enlace
 
 ```js
 export const IMAGES = {
-  hero: '/images/retrato-principal.jpg',   // vertical 3:4
-  detail: '/images/detalle-manos.jpg',     // cuadrada 1:1
-  editorial: '/images/editorial.jpg',      // 16:10
-  practice: '/images/practica.jpg',        // 4:5
-  origin: '/images/retrato-origen.jpg',    // 4:5
-  closing: '/images/cierre.jpg',           // 4:5
+  hero: '/images/retrato-principal.webp', // portada · 3:4
+  detail: '/images/ojo.webp',             // detalle · 1:1
+  editorial: '/images/hombre.webp',       // editorial · 16:10
+  practice: '/images/practica.webp',      // el método · 4:5
+  origin: '/images/origen.webp',          // el origen · 4:5
+  closing: '/images/cierre.webp',         // cierre · 4:5
 };
 ```
 
