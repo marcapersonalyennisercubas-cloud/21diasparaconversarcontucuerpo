@@ -9,6 +9,6 @@ export const IMAGES = {
   detail: '/images/ojo.webp', // detalle · ojo e iris · 1:1
   editorial: '/images/hombre.webp', // editorial · torso masculino · 16:10
   practice: '/images/practica.webp', // el método · sentada junto a la ventana · 4:5
-  origin: '/images/origen.webp', // el origen · espalda · 4:5
+  about: '/images/yenniser.webp', // sobre mí · retrato de Yenniser · 4:5
   closing: '/images/cierre.webp', // cierre · manos y tela · 4:5
 };
