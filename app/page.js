@@ -508,6 +508,347 @@ export default function Page() {
         </div>
       </div>
 
+      {/* ---------- sobre mí ---------- */}
+      <section
+        data-tone="dark"
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          background: INK,
+          color: BONE,
+          padding: 'clamp(90px, 16vh, 176px) clamp(20px, 5vw, 64px)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1420,
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'clamp(56px, 9vh, 116px)',
+          }}
+        >
+          {/* apertura: foto + de dónde vengo */}
+          <div
+            data-grid-collapse="1"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '.82fr 1.18fr',
+              gap: 'clamp(30px, 5vw, 84px)',
+              alignItems: 'center',
+            }}
+          >
+            <Slot
+              ratio="4 / 5"
+              border="rgba(247,246,244,.13)"
+              veil={INK}
+              layerBg="rgba(247,246,244,.03)"
+              layerStripe="repeating-linear-gradient(112deg, rgba(196,160,90,.12) 0 1px, transparent 1px 12px)"
+              scan="linear-gradient(90deg, transparent, rgba(196,160,90,.8), transparent)"
+              padding={18}
+              src={IMAGES.about}
+              alt="Yenniser Cubas"
+              label={
+                <>
+                  retrato
+                  <br />
+                  4:5 · tú, cercana
+                </>
+              }
+            />
+            <div
+              style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 3.4vh, 40px)' }}
+            >
+              <span data-reveal style={eyebrow(GOLD)}>
+                01 · sobre mí
+              </span>
+              <div
+                data-reveal
+                style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: '54ch' }}
+              >
+                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
+                  Durante años aprendí a escuchar el cuerpo desde muchos lugares: la belleza, el
+                  tacto, la energía, la consciencia y, sobre todo, desde mi propia experiencia.
+                </p>
+                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
+                  He pasado gran parte de mi vida trabajando con cuerpos. Observándolos. Tocándolos.
+                  Escuchando lo que expresaban incluso cuando las palabras decían otra cosa.
+                </p>
+              </div>
+              <div
+                data-reveal
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 22,
+                  paddingTop: 'clamp(24px, 3.4vh, 38px)',
+                  borderTop: '1px solid rgba(196,160,90,.28)',
+                }}
+              >
+                <span style={{ ...microLabel, color: GOLD, opacity: 1 }}>
+                  y con el tiempo entendí algo que lo cambió todo
+                </span>
+                <p
+                  style={{
+                    margin: 0,
+                    fontFamily: SERIF,
+                    fontWeight: 300,
+                    fontSize: 'clamp(28px, 3.6vw, 56px)',
+                    lineHeight: 1.08,
+                    letterSpacing: '-.015em',
+                    maxWidth: '22ch',
+                    textWrap: 'balance',
+                  }}
+                >
+                  El cuerpo no es algo que tenemos que controlar. Es algo con lo que podemos aprender
+                  a <em style={{ fontStyle: 'italic', color: GOLD }}>conversar</em>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* me presento + credo */}
+          <div
+            data-grid-collapse="1"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 'clamp(30px, 5vw, 88px)',
+              alignItems: 'start',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(22px, 3vh, 32px)' }}>
+              <span data-reveal style={{ ...microLabel, opacity: 0.5 }}>
+                ahora sí, me presento
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <h2
+                  style={{
+                    margin: 0,
+                    fontFamily: SERIF,
+                    fontWeight: 300,
+                    fontSize: 'clamp(36px, 4.8vw, 76px)',
+                    lineHeight: 1,
+                    letterSpacing: '-.02em',
+                    textWrap: 'balance',
+                  }}
+                >
+                  Soy Yenniser Cubas
+                </h2>
+                <span
+                  data-reveal
+                  style={{
+                    fontSize: '10.5px',
+                    fontWeight: 400,
+                    letterSpacing: '.34em',
+                    textTransform: 'uppercase',
+                    color: GOLD,
+                  }}
+                >
+                  facilitadora de consciencia y energía
+                </span>
+              </div>
+              <div
+                data-reveal
+                style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: '52ch' }}
+              >
+                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
+                  Durante media vida me especialicé en belleza natural, hasta que cerré mi negocio.
+                  Pensé que todo aquello no había servido de nada.
+                </p>
+                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
+                  Con el tiempo entendí que nada de eso fue en vano. Empecé a vivir de una manera más
+                  relajada, más confiada y más alegre. Más feliz, con un vínculo muy profundo con mi
+                  cuerpo.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: 'clamp(24px, 4vw, 58px)', flexWrap: 'wrap' }}>
+                {[
+                  { value: '23', count: '23', label: 'años de aprendizaje' },
+                  { value: '6 cifras', count: null, label: 'invertidas en mi proceso' },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    data-reveal
+                    data-reveal-group="origin"
+                    style={{ display: 'flex', flexDirection: 'column', gap: 7 }}
+                  >
+                    <span
+                      {...(stat.count ? { 'data-count': stat.count } : {})}
+                      style={{
+                        fontFamily: SERIF,
+                        fontWeight: 300,
+                        fontSize: 'clamp(38px, 4.2vw, 62px)',
+                        lineHeight: 1,
+                      }}
+                    >
+                      {stat.value}
+                    </span>
+                    <span style={microLabel}>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 26 }}>
+              <p
+                data-reveal
+                style={{
+                  margin: 0,
+                  fontSize: '15.5px',
+                  lineHeight: 1.85,
+                  opacity: 0.42,
+                  maxWidth: '46ch',
+                  textWrap: 'pretty',
+                }}
+              >
+                No creo en un cuerpo que hay que corregir, domesticar o convertir en otro para poder
+                disfrutar de la vida.
+              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                  paddingTop: 26,
+                  borderTop: `1px solid ${GOLD}`,
+                }}
+              >
+                {[
+                  'Creo en un cuerpo que tiene información.',
+                  'Que percibe.',
+                  'Que sabe.',
+                  'Que elige.',
+                  'Que nos muestra caminos que muchas veces nuestra mente todavía no puede ver.',
+                ].map((line, i) => (
+                  <p
+                    key={line}
+                    data-reveal
+                    data-reveal-group="creo"
+                    style={{
+                      margin: 0,
+                      fontFamily: SERIF,
+                      fontWeight: 300,
+                      fontSize: 'clamp(22px, 2.2vw, 34px)',
+                      lineHeight: 1.28,
+                      textWrap: 'pretty',
+                      ...(i === 0 ? {} : { opacity: 0.86 }),
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* por qué creé los 21 días */}
+          <div
+            data-reveal
+            style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 4vh, 46px)' }}
+          >
+            <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72, maxWidth: '60ch' }}>
+              Después de años acompañando a mujeres y hombres —y de atravesar también mis propios
+              procesos personales— creé{' '}
+              <em style={{ fontStyle: 'italic' }}>21 días para aprender a conversar con tu cuerpo</em>.
+            </p>
+            <div
+              data-grid-collapse="1"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 'clamp(30px, 5vw, 88px)',
+                alignItems: 'start',
+              }}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {[
+                  'No para enseñarte a tener “el cuerpo perfecto”.',
+                  'No para darte otra lista de cosas que deberías hacer.',
+                  'Y tampoco para que pases más tiempo intentando “arreglarte”.',
+                ].map((line, i) => (
+                  <span
+                    key={line}
+                    data-reveal
+                    data-reveal-group="nopara"
+                    style={{
+                      padding: '18px 0',
+                      borderTop: '1px solid rgba(247,246,244,.1)',
+                      fontSize: 'clamp(16px, 1.4vw, 21px)',
+                      lineHeight: 1.55,
+                      opacity: 0.4,
+                      ...(i === 2 ? { borderBottom: '1px solid rgba(247,246,244,.1)' } : {}),
+                    }}
+                  >
+                    {line}
+                  </span>
+                ))}
+              </div>
+              <div
+                data-reveal
+                style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: '48ch' }}
+              >
+                <p
+                  style={{
+                    margin: 0,
+                    fontFamily: SERIF,
+                    fontWeight: 300,
+                    fontSize: 'clamp(24px, 2.6vw, 40px)',
+                    lineHeight: 1.24,
+                    textWrap: 'pretty',
+                  }}
+                >
+                  Lo creé para que tengas un vínculo{' '}
+                  <em style={{ fontStyle: 'italic', color: GOLD }}>muy íntimo</em> con tu cuerpo.
+                </p>
+                <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.85, opacity: 0.68, textWrap: 'pretty' }}>
+                  Una relación en la que puedas preguntarle qué necesita, qué desea, qué disfruta,
+                  qué sabe y qué está disponible para crear contigo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* cierre */}
+          <div
+            data-reveal
+            style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(22px, 3vh, 34px)' }}
+          >
+            <p
+              style={{
+                margin: 0,
+                fontFamily: SERIF,
+                fontStyle: 'italic',
+                fontWeight: 300,
+                fontSize: 'clamp(26px, 3.4vw, 54px)',
+                lineHeight: 1.16,
+                color: GOLD,
+                maxWidth: '24ch',
+                textWrap: 'balance',
+              }}
+            >
+              Porque quizá tu cuerpo nunca estuvo equivocado. Quizá simplemente llevaba mucho tiempo
+              esperando que alguien le preguntara.
+            </p>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontSize: 'clamp(22px, 2.2vw, 34px)',
+                lineHeight: 1.3,
+                opacity: 0.85,
+                maxWidth: '34ch',
+                textWrap: 'pretty',
+              }}
+            >
+              Y ahora puedes empezar a ser más tú y, desde ahí, crear una vida más grandiosa. Con
+              mucha más facilidad.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ---------- escuchar no es conversar ---------- */}
       <section
         data-tone="light"
@@ -1222,334 +1563,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------- sobre mí ---------- */}
-      <section
-        data-tone="dark"
-        style={{
-          position: 'relative',
-          zIndex: 2,
-          background: INK,
-          color: BONE,
-          padding: 'clamp(90px, 16vh, 176px) clamp(20px, 5vw, 64px)',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1420,
-            margin: '0 auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'clamp(56px, 9vh, 116px)',
-          }}
-        >
-          {/* presentación */}
-          <div
-            data-grid-collapse="1"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '.82fr 1.18fr',
-              gap: 'clamp(30px, 5vw, 84px)',
-              alignItems: 'center',
-            }}
-          >
-            <Slot
-              ratio="4 / 5"
-              border="rgba(247,246,244,.13)"
-              veil={INK}
-              layerBg="rgba(247,246,244,.03)"
-              layerStripe="repeating-linear-gradient(112deg, rgba(196,160,90,.12) 0 1px, transparent 1px 12px)"
-              scan="linear-gradient(90deg, transparent, rgba(196,160,90,.8), transparent)"
-              padding={18}
-              src={IMAGES.about}
-              alt="Yenniser Cubas"
-              label={
-                <>
-                  retrato
-                  <br />
-                  4:5 · tú, cercana
-                </>
-              }
-            />
-            <div
-              style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 3.4vh, 40px)' }}
-            >
-              <span data-reveal style={eyebrow(GOLD)}>
-                05 · sobre mí
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                <h2
-                  style={{
-                    margin: 0,
-                    fontFamily: SERIF,
-                    fontWeight: 300,
-                    fontSize: 'clamp(38px, 5.2vw, 82px)',
-                    lineHeight: 1,
-                    letterSpacing: '-.02em',
-                    textWrap: 'balance',
-                  }}
-                >
-                  Soy Yenniser Cubas
-                </h2>
-                <span
-                  data-reveal
-                  style={{
-                    fontSize: '10.5px',
-                    fontWeight: 400,
-                    letterSpacing: '.34em',
-                    textTransform: 'uppercase',
-                    color: GOLD,
-                  }}
-                >
-                  facilitadora de consciencia y energía
-                </span>
-              </div>
-              <div
-                data-reveal
-                style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: '54ch' }}
-              >
-                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
-                  Durante años aprendí a escuchar el cuerpo desde muchos lugares: la belleza, el
-                  tacto, la energía, la consciencia y, sobre todo, desde mi propia experiencia.
-                </p>
-                <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
-                  He pasado gran parte de mi vida trabajando con cuerpos. Observándolos. Tocándolos.
-                  Escuchando lo que expresaban incluso cuando las palabras decían otra cosa.
-                </p>
-              </div>
-              <div style={{ display: 'flex', gap: 'clamp(24px, 4vw, 58px)', flexWrap: 'wrap' }}>
-                {[
-                  { value: '23', count: '23', label: 'años de aprendizaje' },
-                  { value: '6 cifras', count: null, label: 'invertidas en mi proceso' },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    data-reveal
-                    data-reveal-group="origin"
-                    style={{ display: 'flex', flexDirection: 'column', gap: 7 }}
-                  >
-                    <span
-                      {...(stat.count ? { 'data-count': stat.count } : {})}
-                      style={{
-                        fontFamily: SERIF,
-                        fontWeight: 300,
-                        fontSize: 'clamp(42px, 4.8vw, 72px)',
-                        lineHeight: 1,
-                      }}
-                    >
-                      {stat.value}
-                    </span>
-                    <span style={microLabel}>{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* la frase que lo cambió todo */}
-          <div
-            data-reveal
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 22,
-              paddingTop: 'clamp(28px, 4vh, 46px)',
-              borderTop: '1px solid rgba(196,160,90,.28)',
-            }}
-          >
-            <span style={{ ...microLabel, color: GOLD, opacity: 1 }}>
-              lo que cambió mi manera de relacionarme conmigo misma
-            </span>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: SERIF,
-                fontWeight: 300,
-                fontSize: 'clamp(30px, 4.4vw, 68px)',
-                lineHeight: 1.06,
-                letterSpacing: '-.015em',
-                maxWidth: '20ch',
-                textWrap: 'balance',
-              }}
-            >
-              El cuerpo no es algo que tenemos que controlar. Es algo con lo que podemos aprender a{' '}
-              <em style={{ fontStyle: 'italic', color: GOLD }}>conversar</em>.
-            </p>
-          </div>
-
-          {/* historia + credo */}
-          <div
-            data-grid-collapse="1"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'clamp(30px, 5vw, 88px)',
-              alignItems: 'start',
-            }}
-          >
-            <div
-              data-reveal
-              style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: '52ch' }}
-            >
-              <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
-                Durante media vida me especialicé en belleza natural, hasta que cerré mi negocio.
-                Pensé que todo aquello no había servido de nada.
-              </p>
-              <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
-                Con el tiempo entendí que nada de eso fue en vano. Empecé a vivir de una manera más
-                relajada, más confiada y más alegre. Más feliz, con un vínculo muy profundo con mi
-                cuerpo.
-              </p>
-              <p style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.72 }}>
-                Después de años acompañando a mujeres y hombres —y de atravesar también mis propios
-                procesos— creé <em style={{ fontStyle: 'italic' }}>21 días para aprender a conversar
-                con tu cuerpo</em>.
-              </p>
-              <p
-                style={{
-                  margin: 0,
-                  fontFamily: SERIF,
-                  fontWeight: 300,
-                  fontSize: 'clamp(22px, 2.1vw, 32px)',
-                  lineHeight: 1.32,
-                  textWrap: 'pretty',
-                }}
-              >
-                Tú no necesitas recorrer todo ese camino. Puedes acceder ahora a todo ese recorrido
-                condensado en 21 días.
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 26 }}>
-              <p
-                data-reveal
-                style={{
-                  margin: 0,
-                  fontSize: '15.5px',
-                  lineHeight: 1.85,
-                  opacity: 0.42,
-                  maxWidth: '46ch',
-                  textWrap: 'pretty',
-                }}
-              >
-                No creo en un cuerpo que hay que corregir, domesticar o convertir en otro para poder
-                disfrutar de la vida.
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 12,
-                  paddingTop: 26,
-                  borderTop: `1px solid ${GOLD}`,
-                }}
-              >
-                {[
-                  'Creo en un cuerpo que tiene información.',
-                  'Que percibe.',
-                  'Que sabe.',
-                  'Que elige.',
-                  'Que nos muestra caminos que muchas veces nuestra mente todavía no puede ver.',
-                ].map((line, i) => (
-                  <p
-                    key={line}
-                    data-reveal
-                    data-reveal-group="creo"
-                    style={{
-                      margin: 0,
-                      fontFamily: SERIF,
-                      fontWeight: 300,
-                      fontSize: 'clamp(22px, 2.2vw, 34px)',
-                      lineHeight: 1.28,
-                      textWrap: 'pretty',
-                      ...(i === 0 ? {} : { opacity: 0.86 }),
-                    }}
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* para qué lo creé */}
-          <div
-            data-grid-collapse="1"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'clamp(30px, 5vw, 88px)',
-              alignItems: 'start',
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {[
-                'No para enseñarte a tener “el cuerpo perfecto”.',
-                'No para darte otra lista de cosas que deberías hacer.',
-                'Tampoco para que pases más tiempo intentando arreglarte.',
-              ].map((line, i) => (
-                <span
-                  key={line}
-                  data-reveal
-                  data-reveal-group="nopara"
-                  style={{
-                    padding: '18px 0',
-                    borderTop: '1px solid rgba(247,246,244,.1)',
-                    fontSize: 'clamp(16px, 1.4vw, 21px)',
-                    lineHeight: 1.55,
-                    opacity: 0.4,
-                    ...(i === 2 ? { borderBottom: '1px solid rgba(247,246,244,.1)' } : {}),
-                  }}
-                >
-                  {line}
-                </span>
-              ))}
-            </div>
-            <div
-              data-reveal
-              style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: '48ch' }}
-            >
-              <p
-                style={{
-                  margin: 0,
-                  fontFamily: SERIF,
-                  fontWeight: 300,
-                  fontSize: 'clamp(24px, 2.6vw, 40px)',
-                  lineHeight: 1.24,
-                  textWrap: 'pretty',
-                }}
-              >
-                Lo creé para algo mucho más sencillo y, a la vez, mucho más transformador: que tengas
-                un vínculo <em style={{ fontStyle: 'italic', color: GOLD }}>muy íntimo</em> con tu
-                cuerpo.
-              </p>
-              <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.85, opacity: 0.68, textWrap: 'pretty' }}>
-                Una relación en la que puedas preguntarle qué necesita, qué desea, qué disfruta, qué
-                sabe y qué está disponible para crear contigo.
-              </p>
-            </div>
-          </div>
-
-          {/* cierre */}
-          <p
-            data-reveal
-            style={{
-              margin: 0,
-              fontFamily: SERIF,
-              fontStyle: 'italic',
-              fontWeight: 300,
-              fontSize: 'clamp(26px, 3.4vw, 54px)',
-              lineHeight: 1.16,
-              color: GOLD,
-              maxWidth: '24ch',
-              textWrap: 'balance',
-            }}
-          >
-            Porque quizá tu cuerpo nunca estuvo equivocado. Quizá solo llevaba mucho tiempo esperando
-            que alguien le preguntara.
-          </p>
-        </div>
-      </section>
-
       {/* ---------- qué pasa si no lo haces ---------- */}
       <section
         data-tone="light"
@@ -1558,6 +1571,8 @@ export default function Page() {
           zIndex: 2,
           background: BONE,
           color: INK,
+          // separa esta banda de la anterior, que también es clara
+          borderTop: '1px solid rgba(11,11,12,.1)',
           padding: sectionPad,
         }}
       >
@@ -1687,7 +1702,7 @@ export default function Page() {
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(22px, 3vh, 32px)' }}>
             <span data-reveal style={eyebrow(GOLD)}>
-              06 · tu inversión
+              05 · tu inversión
             </span>
             <h2
               data-reveal
@@ -1985,10 +2000,10 @@ export default function Page() {
           pct
           pctColor={GOLD_DEEP}
           src={IMAGES.closing}
-          alt="Manos sobre tela de seda"
+          alt="Yenniser Cubas"
           label={
             <>
-              imagen de cierre
+              retrato de cierre
               <br />
               4:5 · vertical
             </>

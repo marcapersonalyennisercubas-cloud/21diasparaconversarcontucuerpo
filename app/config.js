@@ -10,5 +10,6 @@ export const IMAGES = {
   editorial: '/images/hombre.webp', // editorial · torso masculino · 16:10
   practice: '/images/practica.webp', // el método · sentada junto a la ventana · 4:5
   about: '/images/yenniser.webp', // sobre mí · retrato de Yenniser · 4:5
-  closing: '/images/cierre.webp', // cierre · manos y tela · 4:5
+  closing: '/images/yenniser-cierre.webp', // cierre · retrato de Yenniser · 4:5
+  // libre por ahora: '/images/cierre.webp' (manos y tela) y '/images/origen.webp' (espalda)
 };
