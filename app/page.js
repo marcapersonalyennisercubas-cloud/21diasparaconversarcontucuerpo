@@ -527,136 +527,167 @@ export default function Page() {
         </div>
       </div>
 
-      {/* ---------- escuchar no es conversar ---------- */}
+      {/* ---------- el método ---------- */}
       <section
+        id="aprender"
         data-tone="light"
         style={{
           position: 'relative',
           zIndex: 2,
           background: BONE,
           color: INK,
-          padding: sectionPad,
+          padding: 'clamp(90px, 16vh, 176px) clamp(20px, 5vw, 64px)',
         }}
       >
         <div
           style={{
-            maxWidth: 1180,
+            maxWidth: 1420,
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: 'clamp(42px, 7vh, 86px)',
+            gap: 'clamp(46px, 7vh, 84px)',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(4px, 1vh, 10px)' }}>
-            {[
-              'No para aprender a escuchar tu cuerpo.',
-              'No para conectar con él.',
-            ].map((line) => (
-              <span
-                key={line}
+          <div
+            data-grid-collapse="1"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 'clamp(28px, 5vw, 80px)',
+              alignItems: 'end',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <span data-reveal style={eyebrow(GOLD_DEEP)}>
+                01 · el método
+              </span>
+              <h2
                 data-reveal
-                data-reveal-group="neg"
                 style={{
+                  margin: 0,
                   fontFamily: SERIF,
                   fontWeight: 300,
-                  fontSize: 'clamp(30px, 5.4vw, 78px)',
-                  lineHeight: 1.08,
-                  letterSpacing: '-.01em',
-                  opacity: 0.28,
-                  textDecoration: 'line-through',
-                  textDecorationColor: 'rgba(142,114,49,.6)',
-                  textDecorationThickness: '1px',
+                  fontSize: 'clamp(34px, 4.8vw, 74px)',
+                  lineHeight: 1.03,
+                  letterSpacing: '-.015em',
+                  textWrap: 'balance',
                 }}
               >
-                {line}
-              </span>
-            ))}
-            <span
-              data-reveal
-              data-reveal-group="neg"
-              style={{
-                fontFamily: SERIF,
-                fontWeight: 300,
-                fontSize: 'clamp(34px, 6.2vw, 90px)',
-                lineHeight: 1.06,
-                letterSpacing: '-.015em',
-              }}
-            >
-              Para aprender a{' '}
-              <em style={{ fontStyle: 'italic', fontWeight: 400, color: GOLD_DEEP }}>conversar</em>{' '}
-              con él.
-            </span>
+                Esto es lo que vas a aprender en 21 días
+              </h2>
+            </div>
+            <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <p style={{ ...bodyLead, opacity: 0.74 }}>
+                Una manera sencilla de conversar con tu cuerpo para obtener respuestas concretas y
+                utilizarlas en tu vida cotidiana.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {['no necesitas horas', 'sin práctica complicada', 'sin saber nada previo'].map(
+                  (tag) => (
+                    <span
+                      key={tag}
+                      style={{
+                        padding: '10px 16px',
+                        border: '1px solid rgba(11,11,12,.16)',
+                        borderRadius: 999,
+                        fontSize: '9.5px',
+                        fontWeight: 400,
+                        letterSpacing: '.22em',
+                        textTransform: 'uppercase',
+                        opacity: 0.62,
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
           </div>
 
           <div
             data-grid-collapse="1"
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'clamp(28px, 5vw, 90px)',
+              gridTemplateColumns: '1.3fr .7fr',
+              gap: 'clamp(28px, 5vw, 74px)',
+              alignItems: 'start',
             }}
           >
-            <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-              <p style={{ ...bodyLead, opacity: 0.78 }}>
-                Porque puedes escuchar perfectamente a tu cuerpo y seguir haciendo exactamente lo
-                contrario de lo que te está diciendo.
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 9,
-                  fontSize: '15.5px',
-                  lineHeight: 1.6,
-                  opacity: 0.5,
-                }}
-              >
-                <span>Puedes sentirlo.</span>
-                <span>Puedes estar muy conectada con él.</span>
-                <span>
-                  Puedes saber que estás cansada, que algo no te sienta bien, que ya no quieres algo,
-                  que necesitas otra cosa…
-                </span>
-                <span style={{ opacity: 0.85 }}>Y aun así seguir eligiendo desde la mente.</span>
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {LEARN.map((item, i) => (
+                <div
+                  key={item}
+                  data-reveal
+                  data-reveal-group="learn"
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '46px 1fr',
+                    gap: 18,
+                    alignItems: 'baseline',
+                    padding: '24px 0',
+                    borderTop: '1px solid rgba(11,11,12,.13)',
+                    ...(i === LEARN.length - 1
+                      ? { borderBottom: '1px solid rgba(11,11,12,.13)' }
+                      : {}),
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '10.5px',
+                      fontWeight: 400,
+                      letterSpacing: '.16em',
+                      color: GOLD_DEEP,
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: SERIF,
+                      fontWeight: 300,
+                      fontSize: 'clamp(21px, 1.9vw, 30px)',
+                      lineHeight: 1.32,
+                    }}
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
             </div>
-            <div
-              data-reveal
-              data-narrow
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 22,
-                padding: 'clamp(26px, 3.2vw, 44px)',
-                borderLeft: '1px solid rgba(11,11,12,.14)',
-              }}
-            >
-              <span
-                style={{
-                  fontSize: 10,
-                  fontWeight: 400,
-                  letterSpacing: '.34em',
-                  textTransform: 'uppercase',
-                  color: GOLD_DEEP,
-                }}
-              >
-                la distinción
-              </span>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+              <Slot
+                ratio="4 / 5"
+                border="rgba(11,11,12,.15)"
+                veil={BONE}
+                layerBg="rgba(11,11,12,.02)"
+                layerStripe="repeating-linear-gradient(112deg, rgba(11,11,12,.1) 0 1px, transparent 1px 12px)"
+                scan="linear-gradient(90deg, transparent, rgba(142,114,49,.8), transparent)"
+                src={IMAGES.practice}
+                alt="Imagen de la práctica diaria"
+                label={
+                  <>
+                    imagen práctica
+                    <br />
+                    4:5 · los 10 min al día
+                  </>
+                }
+              />
               <p
+                data-reveal
                 style={{
                   margin: 0,
                   fontFamily: SERIF,
                   fontWeight: 300,
-                  fontSize: 'clamp(24px, 2.6vw, 38px)',
-                  lineHeight: 1.24,
+                  fontSize: 'clamp(21px, 1.9vw, 29px)',
+                  lineHeight: 1.38,
+                  opacity: 0.85,
                   textWrap: 'pretty',
                 }}
               >
-                Escuchar no es conversar. Y conversar tampoco es simplemente preguntar.
-              </p>
-              <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.85, opacity: 0.68, textWrap: 'pretty' }}>
-                Conversar es obtener respuestas claras, inmediatas y concisas de tu cuerpo y aprender
-                a utilizarlas para elegir.
+                Cuando tu cuerpo empieza a formar parte de tus elecciones, aparecen posibilidades que
+                antes ni siquiera contemplabas.
               </p>
             </div>
           </div>
@@ -839,167 +870,136 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------- el método ---------- */}
+      {/* ---------- escuchar no es conversar ---------- */}
       <section
-        id="aprender"
         data-tone="light"
         style={{
           position: 'relative',
           zIndex: 2,
           background: BONE,
           color: INK,
-          padding: 'clamp(90px, 16vh, 176px) clamp(20px, 5vw, 64px)',
+          padding: sectionPad,
         }}
       >
         <div
           style={{
-            maxWidth: 1420,
+            maxWidth: 1180,
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: 'clamp(46px, 7vh, 84px)',
+            gap: 'clamp(42px, 7vh, 86px)',
           }}
         >
-          <div
-            data-grid-collapse="1"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'clamp(28px, 5vw, 80px)',
-              alignItems: 'end',
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <span data-reveal style={eyebrow(GOLD_DEEP)}>
-                03 · el método
-              </span>
-              <h2
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(4px, 1vh, 10px)' }}>
+            {[
+              'No para aprender a escuchar tu cuerpo.',
+              'No para conectar con él.',
+            ].map((line) => (
+              <span
+                key={line}
                 data-reveal
+                data-reveal-group="neg"
                 style={{
-                  margin: 0,
                   fontFamily: SERIF,
                   fontWeight: 300,
-                  fontSize: 'clamp(34px, 4.8vw, 74px)',
-                  lineHeight: 1.03,
-                  letterSpacing: '-.015em',
-                  textWrap: 'balance',
+                  fontSize: 'clamp(30px, 5.4vw, 78px)',
+                  lineHeight: 1.08,
+                  letterSpacing: '-.01em',
+                  opacity: 0.28,
+                  textDecoration: 'line-through',
+                  textDecorationColor: 'rgba(142,114,49,.6)',
+                  textDecorationThickness: '1px',
                 }}
               >
-                Esto es lo que vas a aprender en 21 días
-              </h2>
-            </div>
-            <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <p style={{ ...bodyLead, opacity: 0.74 }}>
-                Una manera sencilla de conversar con tu cuerpo para obtener respuestas concretas y
-                utilizarlas en tu vida cotidiana.
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {['no necesitas horas', 'sin práctica complicada', 'sin saber nada previo'].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      style={{
-                        padding: '10px 16px',
-                        border: '1px solid rgba(11,11,12,.16)',
-                        borderRadius: 999,
-                        fontSize: '9.5px',
-                        fontWeight: 400,
-                        letterSpacing: '.22em',
-                        textTransform: 'uppercase',
-                        opacity: 0.62,
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
+                {line}
+              </span>
+            ))}
+            <span
+              data-reveal
+              data-reveal-group="neg"
+              style={{
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontSize: 'clamp(34px, 6.2vw, 90px)',
+                lineHeight: 1.06,
+                letterSpacing: '-.015em',
+              }}
+            >
+              Para aprender a{' '}
+              <em style={{ fontStyle: 'italic', fontWeight: 400, color: GOLD_DEEP }}>conversar</em>{' '}
+              con él.
+            </span>
           </div>
 
           <div
             data-grid-collapse="1"
             style={{
               display: 'grid',
-              gridTemplateColumns: '1.3fr .7fr',
-              gap: 'clamp(28px, 5vw, 74px)',
-              alignItems: 'start',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 'clamp(28px, 5vw, 90px)',
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {LEARN.map((item, i) => (
-                <div
-                  key={item}
-                  data-reveal
-                  data-reveal-group="learn"
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '46px 1fr',
-                    gap: 18,
-                    alignItems: 'baseline',
-                    padding: '24px 0',
-                    borderTop: '1px solid rgba(11,11,12,.13)',
-                    ...(i === LEARN.length - 1
-                      ? { borderBottom: '1px solid rgba(11,11,12,.13)' }
-                      : {}),
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: '10.5px',
-                      fontWeight: 400,
-                      letterSpacing: '.16em',
-                      color: GOLD_DEEP,
-                    }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: SERIF,
-                      fontWeight: 300,
-                      fontSize: 'clamp(21px, 1.9vw, 30px)',
-                      lineHeight: 1.32,
-                    }}
-                  >
-                    {item}
-                  </span>
-                </div>
-              ))}
+            <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+              <p style={{ ...bodyLead, opacity: 0.78 }}>
+                Porque puedes escuchar perfectamente a tu cuerpo y seguir haciendo exactamente lo
+                contrario de lo que te está diciendo.
+              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 9,
+                  fontSize: '15.5px',
+                  lineHeight: 1.6,
+                  opacity: 0.5,
+                }}
+              >
+                <span>Puedes sentirlo.</span>
+                <span>Puedes estar muy conectada con él.</span>
+                <span>
+                  Puedes saber que estás cansada, que algo no te sienta bien, que ya no quieres algo,
+                  que necesitas otra cosa…
+                </span>
+                <span style={{ opacity: 0.85 }}>Y aun así seguir eligiendo desde la mente.</span>
+              </div>
             </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-              <Slot
-                ratio="4 / 5"
-                border="rgba(11,11,12,.15)"
-                veil={BONE}
-                layerBg="rgba(11,11,12,.02)"
-                layerStripe="repeating-linear-gradient(112deg, rgba(11,11,12,.1) 0 1px, transparent 1px 12px)"
-                scan="linear-gradient(90deg, transparent, rgba(142,114,49,.8), transparent)"
-                src={IMAGES.practice}
-                alt="Imagen de la práctica diaria"
-                label={
-                  <>
-                    imagen práctica
-                    <br />
-                    4:5 · los 10 min al día
-                  </>
-                }
-              />
+            <div
+              data-reveal
+              data-narrow
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 22,
+                padding: 'clamp(26px, 3.2vw, 44px)',
+                borderLeft: '1px solid rgba(11,11,12,.14)',
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 400,
+                  letterSpacing: '.34em',
+                  textTransform: 'uppercase',
+                  color: GOLD_DEEP,
+                }}
+              >
+                la distinción
+              </span>
               <p
-                data-reveal
                 style={{
                   margin: 0,
                   fontFamily: SERIF,
                   fontWeight: 300,
-                  fontSize: 'clamp(21px, 1.9vw, 29px)',
-                  lineHeight: 1.38,
-                  opacity: 0.85,
+                  fontSize: 'clamp(24px, 2.6vw, 38px)',
+                  lineHeight: 1.24,
                   textWrap: 'pretty',
                 }}
               >
-                Cuando tu cuerpo empieza a formar parte de tus elecciones, aparecen posibilidades que
-                antes ni siquiera contemplabas.
+                Escuchar no es conversar. Y conversar tampoco es simplemente preguntar.
+              </p>
+              <p style={{ margin: 0, fontSize: '15.5px', lineHeight: 1.85, opacity: 0.68, textWrap: 'pretty' }}>
+                Conversar es obtener respuestas claras, inmediatas y concisas de tu cuerpo y aprender
+                a utilizarlas para elegir.
               </p>
             </div>
           </div>
@@ -1151,7 +1151,7 @@ export default function Page() {
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <span data-reveal style={eyebrow(GOLD_DEEP)}>
-              04 · para quién
+              03 · para quién
             </span>
             <h2
               data-reveal
@@ -1238,6 +1238,234 @@ export default function Page() {
           >
             Si estás leyendo esto y tu cuerpo acaba de decirte “sí”, probablemente ya sabes.
           </p>
+        </div>
+      </section>
+
+      {/* ---------- inversión ---------- */}
+      <section
+        id="acceder"
+        data-tone="dark"
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          background: INK,
+          color: BONE,
+          padding: 'clamp(90px, 15vh, 170px) clamp(20px, 5vw, 64px)',
+        }}
+      >
+        <div
+          data-grid-collapse="1"
+          style={{
+            maxWidth: 1180,
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 'clamp(30px, 4vw, 68px)',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(22px, 3vh, 32px)' }}>
+            <span data-reveal style={eyebrow(GOLD)}>
+              04 · tu inversión
+            </span>
+            <h2
+              data-reveal
+              style={{
+                margin: 0,
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontSize: 'clamp(32px, 4.4vw, 66px)',
+                lineHeight: 1.03,
+                letterSpacing: '-.015em',
+                textWrap: 'balance',
+              }}
+            >
+              21 días para aprender a conversar con tu cuerpo
+            </h2>
+            <p data-reveal style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.68, maxWidth: '40ch' }}>
+              No necesitas más tiempo. No necesitas una vida perfecta. No necesitas dejarlo todo para
+              empezar. Solo 10 minutos al día.
+            </p>
+            <div data-reveal style={{ display: 'flex', gap: 28, paddingTop: 6 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <span
+                  style={{
+                    fontFamily: SERIF,
+                    fontWeight: 300,
+                    fontSize: 'clamp(30px, 3vw, 44px)',
+                    lineHeight: 1,
+                  }}
+                >
+                  21
+                </span>
+                <span style={microLabel}>días</span>
+              </div>
+              <div style={{ width: 1, background: 'rgba(247,246,244,.14)' }} />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <span
+                  style={{
+                    fontFamily: SERIF,
+                    fontWeight: 300,
+                    fontSize: 'clamp(30px, 3vw, 44px)',
+                    lineHeight: 1,
+                  }}
+                >
+                  10 min
+                </span>
+                <span style={microLabel}>al día</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            data-reveal
+            style={{
+              position: 'relative',
+              padding: 'clamp(28px, 3.4vw, 48px)',
+              border: '1px solid rgba(196,160,90,.34)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 28,
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span
+                style={{
+                  width: 5,
+                  height: 5,
+                  borderRadius: '50%',
+                  background: GOLD,
+                  animation: 'om-breathe 3.6s ease-in-out infinite',
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '9.5px',
+                  fontWeight: 400,
+                  letterSpacing: '.28em',
+                  textTransform: 'uppercase',
+                  color: GOLD,
+                }}
+              >
+                preventa · 10 primeras plazas
+              </span>
+            </div>
+            <span
+              style={{
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: 'clamp(20px, 1.9vw, 28px)',
+                lineHeight: 1.2,
+                marginTop: -14,
+                color: GOLD,
+              }}
+            >
+              Empieza el 1 de octubre
+            </span>
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
+              <span
+                style={{
+                  fontFamily: SERIF,
+                  fontWeight: 300,
+                  fontSize: 'clamp(66px, 8.4vw, 124px)',
+                  lineHeight: 0.84,
+                  letterSpacing: '-.02em',
+                }}
+              >
+                47 €
+              </span>
+              <span
+                style={{
+                  fontSize: 'clamp(17px, 1.6vw, 22px)',
+                  fontWeight: 300,
+                  opacity: 0.38,
+                  textDecoration: 'line-through',
+                  textDecorationColor: 'rgba(196,160,90,.8)',
+                  paddingBottom: 12,
+                }}
+              >
+                97 €
+              </span>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 13,
+                padding: '20px 0',
+                borderTop: '1px solid rgba(247,246,244,.12)',
+                borderBottom: '1px solid rgba(247,246,244,.12)',
+              }}
+            >
+              {INCLUDED.map((item, i) => (
+                <span
+                  key={item}
+                  style={{ display: 'flex', gap: 14, alignItems: 'baseline', fontSize: 15, opacity: 0.78 }}
+                >
+                  <span
+                    style={{
+                      color: GOLD,
+                      fontSize: '9.5px',
+                      fontWeight: 400,
+                      letterSpacing: '.18em',
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {item}
+                </span>
+              ))}
+            </div>
+            <button
+              data-hov
+              data-cursor-label="pagar"
+              onClick={checkout}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                padding: '21px 28px',
+                border: 'none',
+                borderRadius: 999,
+                background: GOLD,
+                color: INK,
+                fontFamily: SANS,
+                fontSize: 13,
+                fontWeight: 400,
+                letterSpacing: '.14em',
+                textTransform: 'uppercase',
+                transition: 'transform .5s cubic-bezier(.16,1,.3,1), background-color .4s',
+              }}
+              {...hoverFx(
+                { transform: 'translateY(-3px)', background: GOLD_SOFT },
+                { transform: 'none', background: GOLD }
+              )}
+            >
+              Quiero conversar con mi cuerpo
+            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+              <span
+                style={{
+                  fontSize: 9,
+                  fontWeight: 400,
+                  letterSpacing: '.24em',
+                  textTransform: 'uppercase',
+                  opacity: 0.42,
+                  textAlign: 'center',
+                }}
+              >
+                pago seguro con stripe · tarjeta, apple pay, google pay
+              </span>
+              <span
+                style={{ fontSize: '12.5px', lineHeight: 1.65, opacity: 0.38, textAlign: 'center' }}
+              >
+                Precio especial de preventa para las primeras 10 personas. Después, el precio será de
+                97 €.
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1690,234 +1918,6 @@ export default function Page() {
               Y ahora puedes empezar a ser más tú y, desde ahí, crear una vida más grandiosa. Con
               mucha más facilidad.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- inversión ---------- */}
-      <section
-        id="acceder"
-        data-tone="dark"
-        style={{
-          position: 'relative',
-          zIndex: 2,
-          background: INK,
-          color: BONE,
-          padding: 'clamp(90px, 15vh, 170px) clamp(20px, 5vw, 64px)',
-        }}
-      >
-        <div
-          data-grid-collapse="1"
-          style={{
-            maxWidth: 1180,
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'clamp(30px, 4vw, 68px)',
-            alignItems: 'center',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(22px, 3vh, 32px)' }}>
-            <span data-reveal style={eyebrow(GOLD)}>
-              06 · tu inversión
-            </span>
-            <h2
-              data-reveal
-              style={{
-                margin: 0,
-                fontFamily: SERIF,
-                fontWeight: 300,
-                fontSize: 'clamp(32px, 4.4vw, 66px)',
-                lineHeight: 1.03,
-                letterSpacing: '-.015em',
-                textWrap: 'balance',
-              }}
-            >
-              21 días para aprender a conversar con tu cuerpo
-            </h2>
-            <p data-reveal style={{ ...bodyLead, lineHeight: 1.85, opacity: 0.68, maxWidth: '40ch' }}>
-              No necesitas más tiempo. No necesitas una vida perfecta. No necesitas dejarlo todo para
-              empezar. Solo 10 minutos al día.
-            </p>
-            <div data-reveal style={{ display: 'flex', gap: 28, paddingTop: 6 }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <span
-                  style={{
-                    fontFamily: SERIF,
-                    fontWeight: 300,
-                    fontSize: 'clamp(30px, 3vw, 44px)',
-                    lineHeight: 1,
-                  }}
-                >
-                  21
-                </span>
-                <span style={microLabel}>días</span>
-              </div>
-              <div style={{ width: 1, background: 'rgba(247,246,244,.14)' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <span
-                  style={{
-                    fontFamily: SERIF,
-                    fontWeight: 300,
-                    fontSize: 'clamp(30px, 3vw, 44px)',
-                    lineHeight: 1,
-                  }}
-                >
-                  10 min
-                </span>
-                <span style={microLabel}>al día</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            data-reveal
-            style={{
-              position: 'relative',
-              padding: 'clamp(28px, 3.4vw, 48px)',
-              border: '1px solid rgba(196,160,90,.34)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 28,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span
-                style={{
-                  width: 5,
-                  height: 5,
-                  borderRadius: '50%',
-                  background: GOLD,
-                  animation: 'om-breathe 3.6s ease-in-out infinite',
-                }}
-              />
-              <span
-                style={{
-                  fontSize: '9.5px',
-                  fontWeight: 400,
-                  letterSpacing: '.28em',
-                  textTransform: 'uppercase',
-                  color: GOLD,
-                }}
-              >
-                preventa · 10 primeras plazas
-              </span>
-            </div>
-            <span
-              style={{
-                fontFamily: SERIF,
-                fontWeight: 300,
-                fontStyle: 'italic',
-                fontSize: 'clamp(20px, 1.9vw, 28px)',
-                lineHeight: 1.2,
-                marginTop: -14,
-                color: GOLD,
-              }}
-            >
-              Empieza el 1 de octubre
-            </span>
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
-              <span
-                style={{
-                  fontFamily: SERIF,
-                  fontWeight: 300,
-                  fontSize: 'clamp(66px, 8.4vw, 124px)',
-                  lineHeight: 0.84,
-                  letterSpacing: '-.02em',
-                }}
-              >
-                47 €
-              </span>
-              <span
-                style={{
-                  fontSize: 'clamp(17px, 1.6vw, 22px)',
-                  fontWeight: 300,
-                  opacity: 0.38,
-                  textDecoration: 'line-through',
-                  textDecorationColor: 'rgba(196,160,90,.8)',
-                  paddingBottom: 12,
-                }}
-              >
-                97 €
-              </span>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 13,
-                padding: '20px 0',
-                borderTop: '1px solid rgba(247,246,244,.12)',
-                borderBottom: '1px solid rgba(247,246,244,.12)',
-              }}
-            >
-              {INCLUDED.map((item, i) => (
-                <span
-                  key={item}
-                  style={{ display: 'flex', gap: 14, alignItems: 'baseline', fontSize: 15, opacity: 0.78 }}
-                >
-                  <span
-                    style={{
-                      color: GOLD,
-                      fontSize: '9.5px',
-                      fontWeight: 400,
-                      letterSpacing: '.18em',
-                    }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  {item}
-                </span>
-              ))}
-            </div>
-            <button
-              data-hov
-              data-cursor-label="pagar"
-              onClick={checkout}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                padding: '21px 28px',
-                border: 'none',
-                borderRadius: 999,
-                background: GOLD,
-                color: INK,
-                fontFamily: SANS,
-                fontSize: 13,
-                fontWeight: 400,
-                letterSpacing: '.14em',
-                textTransform: 'uppercase',
-                transition: 'transform .5s cubic-bezier(.16,1,.3,1), background-color .4s',
-              }}
-              {...hoverFx(
-                { transform: 'translateY(-3px)', background: GOLD_SOFT },
-                { transform: 'none', background: GOLD }
-              )}
-            >
-              Quiero conversar con mi cuerpo
-            </button>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-              <span
-                style={{
-                  fontSize: 9,
-                  fontWeight: 400,
-                  letterSpacing: '.24em',
-                  textTransform: 'uppercase',
-                  opacity: 0.42,
-                  textAlign: 'center',
-                }}
-              >
-                pago seguro con stripe · tarjeta, apple pay, google pay
-              </span>
-              <span
-                style={{ fontSize: '12.5px', lineHeight: 1.65, opacity: 0.38, textAlign: 'center' }}
-              >
-                Precio especial de preventa para las primeras 10 personas. Después, el precio será de
-                97 €.
-              </span>
-            </div>
           </div>
         </div>
       </section>
