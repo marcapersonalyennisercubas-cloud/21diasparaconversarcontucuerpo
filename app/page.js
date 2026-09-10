@@ -2,7 +2,7 @@
 
 import Slot from './Slot';
 import { useLandingMotion } from './useLandingMotion';
-import { IMAGES, STRIPE_URL } from './config';
+import { IMAGES, STRIPE_URL, TESTIMONIALS } from './config';
 
 const SERIF = "'Cormorant Garamond', serif";
 const SANS = "'Jost', sans-serif";
@@ -138,6 +138,69 @@ const INCLUDED = [
   'Una práctica de 10 minutos al día.',
   'El método para hacer preguntas y reconocer las respuestas.',
 ];
+
+
+function TestimonialCard({ t }) {
+  return (
+    <figure
+      style={{
+        flex: '0 0 auto',
+        width: 'clamp(268px, 25vw, 392px)',
+        margin: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 20,
+        padding: 'clamp(26px, 2.6vw, 38px)',
+        border: '1px solid rgba(247,246,244,.11)',
+        background: 'rgba(247,246,244,.025)',
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{ fontSize: 11, letterSpacing: '.34em', color: GOLD, opacity: 0.62 }}
+      >
+        ★★★★★
+      </span>
+      <blockquote
+        style={{
+          margin: 0,
+          fontFamily: SERIF,
+          fontWeight: 300,
+          fontSize: 'clamp(19px, 1.6vw, 25px)',
+          lineHeight: 1.36,
+          opacity: 0.92,
+          textWrap: 'pretty',
+        }}
+      >
+        {t.quote}
+      </blockquote>
+      <figcaption
+        style={{
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: 10,
+          flexWrap: 'wrap',
+          marginTop: 'auto',
+          paddingTop: 16,
+          borderTop: '1px solid rgba(247,246,244,.09)',
+        }}
+      >
+        <span
+          style={{
+            fontSize: '9.5px',
+            fontWeight: 400,
+            letterSpacing: '.26em',
+            textTransform: 'uppercase',
+            color: GOLD,
+          }}
+        >
+          {t.name}
+        </span>
+        {t.role ? <span style={{ ...microLabel, opacity: 0.32 }}>{t.role}</span> : null}
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function Page() {
   useLandingMotion({ particles: true, particleDensity: 1 });
@@ -1240,6 +1303,71 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+      {/* ---------- testimonios ---------- */}
+      {TESTIMONIALS.length > 0 ? (
+        <section
+          data-tone="dark"
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            background: INK,
+            color: BONE,
+            overflow: 'hidden',
+            padding: 'clamp(80px, 13vh, 150px) 0 clamp(80px, 13vh, 150px)',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1420,
+              margin: '0 auto',
+              padding: '0 clamp(20px, 5vw, 64px)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 18,
+            }}
+          >
+            <span data-reveal style={eyebrow(GOLD)}>
+              sus palabras
+            </span>
+            <h2
+              style={{
+                margin: 0,
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontSize: 'clamp(30px, 4.2vw, 62px)',
+                lineHeight: 1.04,
+                letterSpacing: '-.015em',
+                maxWidth: '20ch',
+                textWrap: 'balance',
+              }}
+            >
+              Lo que dicen quienes ya han pasado por mis manos
+            </h2>
+            <span data-reveal style={{ ...microLabel, opacity: 0.38 }}>
+              reseñas reales · google
+            </span>
+          </div>
+
+          <div
+            style={{
+              marginTop: 'clamp(38px, 6vh, 68px)',
+              WebkitMaskImage:
+                'linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%)',
+              maskImage:
+                'linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%)',
+            }}
+          >
+            <div id="om-testis" style={{ display: 'flex', gap: 18, width: 'max-content' }}>
+              {[0, 1].map((run) =>
+                TESTIMONIALS.map((t, i) => (
+                  <TestimonialCard key={`${run}-${i}`} t={t} />
+                ))
+              )}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* ---------- inversión ---------- */}
       <section

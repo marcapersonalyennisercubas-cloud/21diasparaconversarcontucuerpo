@@ -32,3 +32,10 @@ a:hover { color: #DFC28A; }
 @media (max-width: 420px) {
   [data-tone] { padding-left: 22px !important; padding-right: 22px !important; }
 }
+
+/* carrusel infinito de testimonios */
+@keyframes om-slide { from { transform: translate3d(0,0,0) } to { transform: translate3d(-50%,0,0) } }
+#om-testis { animation: om-slide 60s linear infinite; }
+#om-testis:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { #om-testis { animation: none; } }
+@media (max-width: 640px) { #om-testis { animation-duration: 42s; } }
