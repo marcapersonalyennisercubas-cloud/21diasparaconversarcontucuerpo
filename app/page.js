@@ -414,6 +414,25 @@ export default function Page() {
           <div
             data-reveal
             data-reveal-group="hero"
+            style={{ display: 'flex', alignItems: 'center', gap: 11 }}
+          >
+            <span
+              style={{
+                width: 5,
+                height: 5,
+                borderRadius: '50%',
+                background: GOLD,
+                animation: 'om-breathe 3.6s ease-in-out infinite',
+              }}
+            />
+            <span style={{ ...eyebrow(GOLD), letterSpacing: '.28em' }}>
+              empieza el 1 de octubre
+            </span>
+          </div>
+
+          <div
+            data-reveal
+            data-reveal-group="hero"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -461,7 +480,7 @@ export default function Page() {
             pct
             pctColor={GOLD}
             src={IMAGES.hero}
-            alt="Retrato principal"
+            alt="Yenniser Cubas"
             label={
               <>
                 retrato principal
@@ -1784,6 +1803,19 @@ export default function Page() {
                 preventa · 10 primeras plazas
               </span>
             </div>
+            <span
+              style={{
+                fontFamily: SERIF,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: 'clamp(20px, 1.9vw, 28px)',
+                lineHeight: 1.2,
+                marginTop: -14,
+                color: GOLD,
+              }}
+            >
+              Empieza el 1 de octubre
+            </span>
             <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18 }}>
               <span
                 style={{
@@ -1968,6 +2000,24 @@ export default function Page() {
           <div
             data-reveal
             data-reveal-group="end"
+            style={{ display: 'flex', alignItems: 'center', gap: 11 }}
+          >
+            <span
+              style={{
+                width: 5,
+                height: 5,
+                borderRadius: '50%',
+                background: GOLD_DEEP,
+                animation: 'om-breathe 3.6s ease-in-out infinite',
+              }}
+            />
+            <span style={{ ...eyebrow(GOLD_DEEP), letterSpacing: '.28em' }}>
+              empieza el 1 de octubre
+            </span>
+          </div>
+          <div
+            data-reveal
+            data-reveal-group="end"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -1998,7 +2048,7 @@ export default function Page() {
           pct
           pctColor={GOLD_DEEP}
           src={IMAGES.closing}
-          alt="Yenniser Cubas"
+          alt="Manos sobre tela de seda"
           label={
             <>
               retrato de cierre
