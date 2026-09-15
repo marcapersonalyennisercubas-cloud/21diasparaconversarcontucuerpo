@@ -5,7 +5,7 @@ export const STRIPE_URL =
 // Fotos de la landing. Pon aquí la ruta de cada imagen dentro de /public/images.
 // Si un valor es null, ese hueco se muestra con el marcador de diseño.
 export const IMAGES = {
-  hero: '/images/yenniser-portada.webp', // portada · Yenniser sonriendo · 3:4
+  hero: '/images/yenniser-portada.webp', // portada · Yenniser, retrato cercano · 3:4
   detail: '/images/ojo.webp', // detalle · ojo e iris · 1:1
   editorial: '/images/hombre.webp', // editorial · torso masculino · 16:10
   practice: '/images/practica.webp', // el método · sentada junto a la ventana · 4:5
